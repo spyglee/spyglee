@@ -58,29 +58,35 @@ const values = [
 const clients = [
   {
     name: 'Amazon',
-    logo: 'https://assets.aboutamazon.com/dims4/default/a2ec05b/2147483647/strip/true/crop/2000x1000+0+63/resize/1200x600!/quality/90/?url=https%3A%2F%2Famazon-blogs-brightspot.s3.amazonaws.com%2F52%2Fa8%2F3c8ee3984dd9a2548f89d35d787c%2Famazon-logo-hero-images-2024-4.jpg',
+    logo: 'amazon.png',
     className: 'logo-amazon',
+    link: 'https://amazon.com/'
   },
   {
     name: 'Columbia Shipmanagement',
-    logo: 'https://columbiagroup.org/wp-content/uploads/2025/07/Columbia-Shipmanagement.svg',
+    logo: 'columbiashipmanagement.svg',
+    link: 'https://columbiagroup.org/'
   },
   {
     name: 'Thinkspan',
-    logo: 'https://cdn.prod.website-files.com/68655bb193a345509afa8497/6900e2c7bbf2df94bb5bead2_Thinkspan%20Logo%20%E2%80%94%20Horizontal%20%E2%80%94%20With%20Margin%20%E2%80%94%20On%20Dark.svg',
+    logo: 'thinkspan.svg',
     className: 'logo-dark-source',
+    link: 'https://thinkspan.com/'
   },
   {
     name: 'Rocket League Garage',
-    logo: 'https://rocket-league.com/assets/images/logos/rl_garage_logo_on_light.png',
+    logo: 'rlgarage.png',
+    link: 'https://rocket-league.com/'
   },
   {
     name: 'AlmaTherm.kz',
-    logo: 'https://almatherm.kz/imgs/logo.svg',
+    logo: 'almatherm.svg',
+    link: 'https://almatherm.kz/'
   },
   {
     name: 'Lunapizza.ge',
-    logo: 'https://framerusercontent.com/images/nGTCLRLUQoPV9jHP0C58MBiaEBI.png',
+    logo: 'lunapizza.png.webp',
+    link: 'https://lunapizza.ge/'
   },
 ];
 
@@ -342,7 +348,7 @@ function App() {
           {clients.map((client) => (
             <a
               className="client-logo"
-              href={client.logo}
+              href={client.link}
               key={client.name}
               target="_blank"
               rel="noreferrer"
