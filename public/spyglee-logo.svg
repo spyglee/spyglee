@@ -1,0 +1,8 @@
+<svg width="148" height="40" viewBox="0 0 148 40" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">spyglee logo</title>
+  <desc id="desc">A minimal two-tone spyglee mark with lowercase wordmark.</desc>
+  <path d="M20 4C11.16 4 4 11.16 4 20s7.16 16 16 16 16-7.16 16-16S28.84 4 20 4Z" fill="#1D1D1F"/>
+  <path d="M29.42 14.36C27.19 11.04 23.73 9 20 9c-5.15 0-9.75 3.88-12.03 9.74a3.53 3.53 0 0 0 0 2.52C10.25 27.12 14.85 31 20 31c3.73 0 7.19-2.04 9.42-5.36a1.8 1.8 0 0 0-.18-2.24l-5.66-5.66a1.8 1.8 0 0 0-2.54 0l-2.39 2.39a1.8 1.8 0 0 0 0 2.54l2.42 2.42c-.35.08-.7.12-1.07.12-2.82 0-5.31-2.02-6.95-5.21C14.69 16.81 17.18 14.79 20 14.79c1.33 0 2.57.45 3.68 1.25l2.24-2.24a1.8 1.8 0 0 1 2.55 0l.95.56Z" fill="#FFFFFF"/>
+  <path d="M25.5 22.27 23.3 20.1l-2.18 2.18 2.17 2.18 2.2-2.18Z" fill="#0071E3"/>
+  <text x="46" y="27" fill="#1D1D1F" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif" font-size="25" font-weight="700" letter-spacing="-.2">spyglee</text>
+</svg>
