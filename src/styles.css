@@ -785,9 +785,11 @@ h3 {
 
 .tech-card img {
   width: 100%;
-  aspect-ratio: 3 / 2;
+  height: 235px;
+  padding: 10px;
+  aspect-ratio: 1/1;
   border-radius: 18px;
-  object-fit: cover;
+  object-fit: contain;
   background: #ffffff;
 }
 

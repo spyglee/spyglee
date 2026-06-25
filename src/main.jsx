@@ -104,12 +104,12 @@ const technologyStack = [
       },
       {
         name: 'Node.js',
-        image: '/tech/nodejs.svg',
+        image: '/tech/nodejs.png',
         description: 'Efficient server-side JavaScript for APIs, integrations, automation, and real-time services.',
       },
       {
         name: 'TypeScript',
-        image: '/tech/typescript.svg',
+        image: '/tech/typescript.png',
         description: 'Typed JavaScript that improves reliability, refactoring confidence, and long-term maintainability.',
       },
     ],
@@ -125,7 +125,7 @@ const technologyStack = [
       },
       {
         name: 'React Native',
-        image: '/tech/react-native.svg',
+        image: '/tech/react.svg',
         description: 'Cross-platform mobile apps that share product logic while preserving a native feel.',
       },
     ],
@@ -136,7 +136,7 @@ const technologyStack = [
     technologies: [
       {
         name: 'Swift',
-        image: '/tech/swift.svg',
+        image: '/tech/swift.png',
         description: 'Native macOS applications with Apple-quality performance, privacy, and interface behavior.',
       },
       {
@@ -151,29 +151,24 @@ const technologyStack = [
     description: 'Practical Microsoft 365 and Power Platform solutions that improve day-to-day office work.',
     technologies: [
       {
-        name: 'Power Platform',
-        image: '/tech/power-platform.svg',
+        name: 'Power Apps',
+        image: '/tech/powerapps.png',
         description: 'Power Apps, Power Automate, and Power BI solutions for forms, approvals, dashboards, and automation.',
       },
       {
-        name: 'SharePoint',
-        image: '/tech/sharepoint.svg',
-        description: 'Structured intranets, document workflows, knowledge hubs, and secure collaboration spaces.',
-      },
-      {
-        name: 'Office Scripts',
-        image: '/tech/office-scripts.svg',
+        name: 'Power Automate',
+        image: '/tech/powerautomate.svg',
         description: 'Excel automation for repeatable reporting, cleanup, and business process shortcuts.',
       },
       {
-        name: 'Microsoft Graph',
-        image: '/tech/microsoft-graph.svg',
+        name: 'Copilot Studio',
+        image: '/tech/copilotstudio.webp',
         description: 'Secure integrations across Microsoft 365 data, users, calendars, files, and teams.',
       },
       {
-        name: 'VBA',
-        image: '/tech/vba.svg',
-        description: 'Targeted automation for established Excel, Access, Outlook, and Office workflows.',
+        name: 'SharePoint Online',
+        image: '/tech/sharepointoline.webp',
+        description: 'Structured intranets, document workflows, knowledge hubs, and secure collaboration spaces.',
       },
     ],
   },
@@ -266,9 +261,6 @@ function App() {
         </div>
       </section>
 
-
-
-
       <section className="values section" id="values">
         <div className="value-grid" aria-label="spyglee values">
           {values.map((value) => {
@@ -283,7 +275,6 @@ function App() {
           })}
         </div>
       </section>
-
 
       <section className="technology section" id="technology">
         <div className="section-heading">
@@ -401,11 +392,14 @@ function App() {
           <p className="eyebrow">Start</p>
           <h2>Bring us an idea, a workflow, or a system that needs to grow without compromising security or privacy.</h2>
         </div>
-        <a className="button primary" href="mailto:hello@spyglee.com">
+        <a className="button primary" href="mailto:m.bahrov@icloud.com">
           hello@spyglee.com
           <ArrowRight size={18} />
         </a>
       </section>
+      <footer>
+          <a>SPYGLEE 2026</a>
+      </footer>
     </main>
   );
 }
