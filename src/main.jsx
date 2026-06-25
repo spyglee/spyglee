@@ -163,12 +163,12 @@ const technologyStack = [
       {
         name: 'Copilot Studio',
         image: '/tech/copilotstudio.webp',
-        description: 'Secure integrations across Microsoft 365 data, users, calendars, files, and teams.',
+        description: 'Enables users to build, customize, and deploy AI-powered copilots and chatbots across Microsoft services.',
       },
       {
         name: 'SharePoint Online',
-        image: '/tech/sharepointoline.webp',
-        description: 'Structured intranets, document workflows, knowledge hubs, and secure collaboration spaces.',
+        image: '/tech/sharepointonline.png',
+        description: 'Cloud-based platform for team collaboration, document management, and intranet site creation.',
       },
     ],
   },
