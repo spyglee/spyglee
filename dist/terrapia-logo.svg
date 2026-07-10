@@ -1,0 +1,13 @@
+<svg width="420" height="140" viewBox="0 0 420 140" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">TerraPia logo</title>
+  <desc id="desc">A minimal circular leaf and path mark with TerraPia wordmark.</desc>
+  <rect width="420" height="140" rx="32" fill="#F7F7F8"/>
+  <circle cx="76" cy="70" r="38" fill="#EAF7F0"/>
+  <path d="M76 101C58.8 88.6 50.2 75.4 50.2 61.4C50.2 45.9 60.8 34 76 34C91.2 34 101.8 45.9 101.8 61.4C101.8 75.4 93.2 88.6 76 101Z" fill="#FFFFFF" stroke="#1D1D1F" stroke-width="3.5" stroke-linejoin="round"/>
+  <path d="M76 92V48" stroke="#1D1D1F" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M76 72C65.7 72 59.2 66.1 56.4 57.8C67.4 56.7 73.9 61.7 76 72Z" fill="#80CFA3"/>
+  <path d="M76 79C88.2 78.2 95.3 71.3 97.4 61.3C84.5 61.1 77.7 67.4 76 79Z" fill="#60B7C5"/>
+  <path d="M128 47H228" stroke="#D9D9DE" stroke-width="2" stroke-linecap="round"/>
+  <text x="128" y="82" fill="#1D1D1F" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif" font-size="42" font-weight="700" letter-spacing="0">TerraPia</text>
+  <text x="130" y="108" fill="#6E6E73" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="600" letter-spacing="0">online therapy platform</text>
+</svg>
