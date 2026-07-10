@@ -1,0 +1,111 @@
+.clients {
+  padding-top: 38px;
+  padding-bottom: 92px;
+}
+
+.clients h2 {
+  max-width: 900px;
+}
+
+.client-marquee {
+  container-type: inline-size;
+  --visible-cards: 6;
+  overflow: hidden;
+  position: relative;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+}
+
+.client-track {
+  display: flex;
+  width: max-content;
+  gap: 12px;
+  animation: client-scroll 32s linear infinite;
+}
+
+.client-marquee:hover .client-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .client-track {
+    animation: none;
+  }
+}
+
+@keyframes client-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-50% - 6px));
+  }
+}
+
+.client-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: calc((100cqw - (var(--visible-cards) - 1) * 12px) / var(--visible-cards));
+  min-height: 118px;
+  padding: 24px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    background 180ms ease;
+}
+
+.client-logo:hover {
+  transform: translateY(-2px);
+  background: #ffffff;
+  box-shadow:
+    inset 0 0 0 1px rgba(0, 0, 0, 0.05),
+    0 18px 40px rgba(0, 0, 0, 0.08);
+}
+
+.client-logo img {
+  display: block;
+  max-width: 100%;
+  max-height: 54px;
+  object-fit: contain;
+}
+
+.client-logo .logo-amazon {
+  width: 128px;
+  height: 54px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px;
+}
+
+.client-logo .logo-dark-source {
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: #111111;
+}
+
+@media (max-width: 980px) {
+  .client-marquee {
+    --visible-cards: 3;
+  }
+}
+
+@media (max-width: 620px) {
+  .clients {
+    padding-top: 18px;
+    padding-bottom: 72px;
+  }
+
+  .client-marquee {
+    --visible-cards: 2;
+  }
+
+  .client-logo {
+    min-height: 104px;
+    padding: 18px;
+  }
+}

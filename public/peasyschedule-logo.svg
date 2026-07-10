@@ -1,0 +1,14 @@
+<svg width="248" height="40" viewBox="0 0 248 40" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">peasySchedule logo</title>
+  <desc id="desc">A rounded calendar-and-checkmark monogram, in the spyglee mark style, with peasySchedule wordmark.</desc>
+  <g transform="translate(2,2)">
+    <rect x="7" y="0" width="4" height="10" rx="2" fill="#06204F"/>
+    <rect x="25" y="0" width="4" height="10" rx="2" fill="#06204F"/>
+    <rect x="0" y="5" width="36" height="31" rx="9" fill="#06204F"/>
+    <path d="M10.5 20.5 L15.5 25.5 L26 14" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <circle cx="10" cy="30.5" r="2.4" fill="#0071E3"/>
+    <circle cx="18" cy="30.5" r="2.4" fill="#0071E3"/>
+    <circle cx="26" cy="30.5" r="2.4" fill="#0071E3"/>
+  </g>
+  <text x="48" y="27" fill="#06204F" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif" font-size="25" font-weight="700" letter-spacing="-.2">peasySchedule</text>
+</svg>
