@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 import {
   ArrowRight,
-  Check,
+  Bot,
   Code2,
   Expand,
   Layers3,
@@ -17,6 +17,11 @@ const services = [
     icon: Code2,
     title: 'Apps and platforms',
     text: 'Modern web products, SaaS platforms, and internal tools shaped around secure, scalable business workflows.',
+  },
+  {
+    icon: Bot,
+    title: 'AI and automation',
+    text: 'AI agents, chatbots, and workflow automation that take over the repetitive work — document processing, approvals, and internal knowledge search.',
   },
   {
     icon: Layers3,
@@ -195,14 +200,88 @@ const projects = [
   },
 ];
 
+const businessProblems = [
+  {
+    problem: "Manual, repetitive work eats up your team's time.",
+    solution: 'Automated workflows and AI agents handle the repetitive parts.',
+  },
+  {
+    problem: 'Employees waste time searching for documents and answers.',
+    solution: 'Centralized systems and AI-powered search surface what people need.',
+  },
+  {
+    problem: "Core systems don't talk to each other.",
+    solution: 'Integrations and APIs connect the tools you already use.',
+  },
+  {
+    problem: 'Approvals and internal processes move too slowly.',
+    solution: 'Streamlined, automated approval workflows.',
+  },
+  {
+    problem: "Internal tools are outdated or don't fit how you work.",
+    solution: 'Custom software built around your actual workflow.',
+  },
+  {
+    problem: 'Reporting still happens by hand, in spreadsheets.',
+    solution: 'Automated dashboards and reporting your team can trust.',
+  },
+];
+
 const process = [
-  'Understand the product, users, constraints, privacy needs, and technical risk.',
-  'Design the first clear version with security and scalability requirements visible early.',
-  'Build in focused releases with production-ready quality and reliable deployment paths.',
-  'Measure the result, document the system, and keep improving responsibly.',
+  {
+    step: '01',
+    title: 'Understand your business',
+    text: 'We learn how your team actually works, where time is lost, and what success looks like before proposing anything.',
+  },
+  {
+    step: '02',
+    title: 'Design the solution',
+    text: 'We recommend the most effective approach — technology chosen to fit the problem, not the other way around.',
+  },
+  {
+    step: '03',
+    title: 'Build',
+    text: 'We develop in focused, production-ready releases with security and scalability visible from the start.',
+  },
+  {
+    step: '04',
+    title: 'Deploy',
+    text: 'We roll out with minimal disruption to your daily operations.',
+  },
+  {
+    step: '05',
+    title: 'Support',
+    text: 'We stay on as a long-term partner — monitoring, improving, and extending the system as your business grows.',
+  },
 ];
 
 function App() {
+  useEffect(() => {
+    const targets = document.querySelectorAll('.reveal');
+    if (!targets.length) return;
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) {
+      targets.forEach((el) => el.classList.add('is-visible'));
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2, rootMargin: '0px 0px -10% 0px' }
+    );
+
+    targets.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <main>
       <nav className="nav">
@@ -215,52 +294,28 @@ function App() {
           <a href="#projects">Projects</a>
           <a href="#clients">Clients</a>
           <a href="#services">Services</a>
+          <a href="#problems">Problems</a>
           <a href="#process">Process</a>
+          <a href="#about">About</a>
           <a href="#contact">Contact</a>
         </div>
       </nav>
 
       <section className="hero" id="top">
         <div className="hero-copy">
-          <p className="eyebrow">Software development solutions</p>
+          <p className="eyebrow">Software, automation, and AI for growing businesses</p>
           <h1>Software that feels simple. Built for work that is not.</h1>
           <p className="hero-text">
-            spyglee designs and builds refined web products, cloud systems, and data tools for teams that care about security, scalability, privacy, and long-term clarity.
+            We help teams cut manual work, connect disconnected systems, and ship software that fits how the business actually runs — backed by secure, production-grade engineering across web, cloud, automation, and AI.
           </p>
           <div className="hero-actions">
             <a className="button primary" href="#contact">
-              Start your project
+              Book a free consultation
               <ArrowRight size={18} />
             </a>
             <a className="button secondary" href="#services">
-              Explore services
+              Explore our services
             </a>
-          </div>
-        </div>
-
-        <div className="product-panel" aria-label="Example of a secure Swift API route spyglee would build">
-          <div className="window-bar">
-            <span />
-            <span />
-            <span />
-            <span className="window-title">AuthMiddleware.swift</span>
-          </div>
-          <div className="code-screen">
-            <pre className="code-block">
-              <span className="code-line"><span className="tok-comment">// Verify the session before granting access</span></span>
-              <span className="code-line"><span className="tok-keyword">func</span> <span className="tok-fn">requireAuth</span>(_ <span className="tok-param">req</span>: <span className="tok-fn">Request</span>) <span className="tok-keyword">throws</span> -&gt; <span className="tok-fn">User</span> {'{'}</span>
-              <span className="code-line indent"><span className="tok-keyword">guard let</span> token = req.cookies[<span className="tok-string">"session"</span>]?.string <span className="tok-keyword">else</span> {'{'}</span>
-              <span className="code-line indent-2"><span className="tok-keyword">throw</span> Abort(<span className="tok-number">.unauthorized</span>)</span>
-              <span className="code-line indent">{'}'}</span>
-              <span className="code-line indent"><span className="tok-keyword">let</span> session = <span className="tok-keyword">try</span> <span className="tok-fn">Session</span>.verify(token, using: <span className="tok-number">.constantTime</span>)</span>
-              <span className="code-line indent"><span className="tok-keyword">return</span> session.user</span>
-              <span className="code-line">{'}'}</span>
-            </pre>
-            <div className="code-status">
-              <span><Check size={14} /> 42 tests passed</span>
-              <span><Check size={14} /> 0 vulnerabilities</span>
-              <span><Check size={14} /> Deployed to production</span>
-            </div>
           </div>
         </div>
       </section>
@@ -271,8 +326,10 @@ function App() {
             const Icon = value.icon;
             return (
               <article className="value-card" key={value.title}>
-                <Icon size={22} />
-                <h3>{value.title}</h3>
+                <div className="card-heading">
+                  <Icon size={22} />
+                  <h3>{value.title}</h3>
+                </div>
                 <p>{value.text}</p>
               </article>
             );
@@ -281,9 +338,9 @@ function App() {
       </section>
 
       <section className="technology section" id="technology">
-        <div className="section-heading">
-          <p className="eyebrow">Main technology stack</p>
-          <h2>Tools we use to build secure products for web, mobile, desktop, and Microsoft workspaces.</h2>
+        <div className="section-heading reveal">
+          <p className="eyebrow">Technology</p>
+          <h2>The right technology for the job — chosen to fit your business, not the other way around.</h2>
         </div>
         <div className="stack-groups">
           {technologyStack.map((group) => (
@@ -295,11 +352,11 @@ function App() {
               <div className="tech-grid">
                 {group.technologies.map((tech) => (
                   <div className="tech-card" key={tech.name}>
-                    <img src={tech.image} alt={tech.name + ' technology image'} />
-                    <div>
+                    <div className="card-heading">
+                      <img src={tech.image} alt={tech.name + ' technology image'} />
                       <h4>{tech.name}</h4>
-                      <p>{tech.description}</p>
                     </div>
+                    <p>{tech.description}</p>
                   </div>
                 ))}
               </div>
@@ -309,7 +366,7 @@ function App() {
       </section>
 
       <section className="projects section" id="projects">
-        <div className="section-heading">
+        <div className="section-heading reveal">
           <p className="eyebrow">Our projects</p>
           <h2>Digital products designed around sensitive, human workflows.</h2>
         </div>
@@ -319,7 +376,7 @@ function App() {
               <div className="project-logo-wrap">
                 <img src={project.logo} alt={project.name + ' logo'} />
               </div>
-              <div className="project-content">
+              <div className="project-content reveal">
                 <p className="project-label">{project.label}</p>
                 <h3>{project.title}</h3>
                 <p>{project.text}</p>
@@ -335,7 +392,7 @@ function App() {
       </section>
 
       <section className="clients section" id="clients">
-        <div className="section-heading">
+        <div className="section-heading reveal">
           <p className="eyebrow">Clients</p>
           <h2>Trusted by teams across commerce, logistics, gaming, and hospitality.</h2>
         </div>
@@ -363,7 +420,7 @@ function App() {
       </section>
 
       <section className="section" id="services">
-        <div className="section-heading">
+        <div className="section-heading reveal">
           <p className="eyebrow">Capabilities</p>
           <h2>Software that fits the way your business operates.</h2>
         </div>
@@ -372,8 +429,10 @@ function App() {
             const Icon = service.icon;
             return (
               <article className="service-card" key={service.title}>
-                <Icon size={24} />
-                <h3>{service.title}</h3>
+                <div className="card-heading">
+                  <Icon size={24} />
+                  <h3>{service.title}</h3>
+                </div>
                 <p>{service.text}</p>
               </article>
             );
@@ -381,25 +440,68 @@ function App() {
         </div>
       </section>
 
-      <section className="section process-section" id="process">
-        <div className="section-heading">
-          <p className="eyebrow">Approach</p>
-          <h2>Thoughtful process. Fewer surprises. Better software.</h2>
+      <section className="section problems" id="problems">
+        <div className="section-heading reveal">
+          <p className="eyebrow">Business problems</p>
+          <h2>We solve real, everyday problems — not just build software.</h2>
         </div>
-        <div className="process-list">
-          {process.map((item) => (
-            <div className="process-item" key={item}>
-              <span className="check">
-                <Check size={16} />
-              </span>
-              <p>{item}</p>
+        <div className="problem-grid" aria-label="Problems we solve and how">
+          {businessProblems.map((row) => (
+            <div className="problem-row" key={row.problem}>
+              <div className="problem-cell problem">
+                <span className="problem-tag">Before</span>
+                <p>{row.problem}</p>
+              </div>
+              <ArrowRight className="problem-arrow" size={20} aria-hidden="true" />
+              <div className="problem-cell solution">
+                <span className="problem-tag">After</span>
+                <p>{row.solution}</p>
+              </div>
             </div>
           ))}
         </div>
       </section>
 
+      <section className="section process-section" id="process">
+        <div className="section-heading reveal">
+          <p className="eyebrow">Approach</p>
+          <h2>Thoughtful process. Fewer surprises. Better software.</h2>
+        </div>
+        <div className="process-timeline" aria-label="How we work">
+          {process.map((item, index) => (
+            <React.Fragment key={item.step}>
+              <div className="process-step">
+                <span className="process-index">{item.step}</span>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </div>
+              {index < process.length - 1 && (
+                <div className="process-connector" aria-hidden="true">
+                  <ArrowRight size={18} />
+                </div>
+              )}
+            </React.Fragment>
+          ))}
+        </div>
+      </section>
+
+      <section className="section about" id="about">
+        <div className="about-grid">
+          <div className="about-visual" aria-hidden="true">
+            <img src="/spyglee-logo.svg" alt="" />
+          </div>
+          <div className="about-content reveal">
+            <p className="eyebrow">About spyglee</p>
+            <h2>Full-stack software development.</h2>
+            <p className="about-text">
+              We design and build across web, mobile, desktop, and cloud, with practical Microsoft 365 and automation expertise built in — secure, scalable software shaped around how your business actually runs.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section className="cta" id="contact">
-        <div>
+        <div className="reveal">
           <p className="eyebrow">Start</p>
           <h2>Bring us an idea, a workflow, or a system that needs to grow without compromising security or privacy.</h2>
         </div>
@@ -418,6 +520,8 @@ function App() {
             <a href="#projects">Projects</a>
             <a href="#clients">Clients</a>
             <a href="#services">Services</a>
+            <a href="#problems">Problems</a>
+            <a href="#about">About</a>
             <a href="#contact">Contact</a>
           </div>
           <p className="footer-copyright">&copy; {new Date().getFullYear()} spyglee. All rights reserved.</p>
