@@ -1,7 +1,7 @@
 {
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && node scripts/prerender.mjs",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -11,5 +11,7 @@
     "react-dom": "latest",
     "lucide-react": "latest"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "playwright": "^1.61.1"
+  }
 }
