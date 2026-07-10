@@ -88,6 +88,11 @@ const clients = [
     logo: 'lunapizza.png.webp',
     link: 'https://lunapizza.ge/'
   },
+  {
+    name: 'EBU',
+    logo: 'ebu.svg',
+    link: 'https://www.ebu.ch/'
+  },
 ];
 
 
@@ -233,29 +238,28 @@ function App() {
           </div>
         </div>
 
-        <div className="product-panel" aria-label="Software delivery overview">
+        <div className="product-panel" aria-label="Example of a secure Swift API route spyglee would build">
           <div className="window-bar">
             <span />
             <span />
             <span />
+            <span className="window-title">AuthMiddleware.swift</span>
           </div>
-          <div className="product-screen">
-            <div className="screen-header">
-              <span>Project OS</span>
-              <strong>98%</strong>
-            </div>
-            <div className="screen-line wide" />
-            <div className="screen-line" />
-            <div className="screen-grid">
-              <span />
-              <span />
-              <span />
-              <span />
-            </div>
-            <div className="screen-footer">
-              <span>Prototype</span>
-              <span>Build</span>
-              <span>Launch</span>
+          <div className="code-screen">
+            <pre className="code-block">
+              <span className="code-line"><span className="tok-comment">// Verify the session before granting access</span></span>
+              <span className="code-line"><span className="tok-keyword">func</span> <span className="tok-fn">requireAuth</span>(_ <span className="tok-param">req</span>: <span className="tok-fn">Request</span>) <span className="tok-keyword">throws</span> -&gt; <span className="tok-fn">User</span> {'{'}</span>
+              <span className="code-line indent"><span className="tok-keyword">guard let</span> token = req.cookies[<span className="tok-string">"session"</span>]?.string <span className="tok-keyword">else</span> {'{'}</span>
+              <span className="code-line indent-2"><span className="tok-keyword">throw</span> Abort(<span className="tok-number">.unauthorized</span>)</span>
+              <span className="code-line indent">{'}'}</span>
+              <span className="code-line indent"><span className="tok-keyword">let</span> session = <span className="tok-keyword">try</span> <span className="tok-fn">Session</span>.verify(token, using: <span className="tok-number">.constantTime</span>)</span>
+              <span className="code-line indent"><span className="tok-keyword">return</span> session.user</span>
+              <span className="code-line">{'}'}</span>
+            </pre>
+            <div className="code-status">
+              <span><Check size={14} /> 42 tests passed</span>
+              <span><Check size={14} /> 0 vulnerabilities</span>
+              <span><Check size={14} /> Deployed to production</span>
             </div>
           </div>
         </div>
@@ -335,19 +339,26 @@ function App() {
           <p className="eyebrow">Clients</p>
           <h2>Trusted by teams across commerce, logistics, gaming, and hospitality.</h2>
         </div>
-        <div className="client-grid" aria-label="Client logos">
-          {clients.map((client) => (
-            <a
-              className="client-logo"
-              href={client.link}
-              key={client.name}
-              target="_blank"
-              rel="noreferrer"
-              aria-label={`${client.name} logo source`}
-            >
-              <img className={client.className || ''} src={client.logo} alt={`${client.name} logo`} />
-            </a>
-          ))}
+        <div className="client-marquee" aria-label="Client logos">
+          <div className="client-track">
+            {[...clients, ...clients].map((client, index) => {
+              const duplicate = index >= clients.length;
+              return (
+                <a
+                  className="client-logo"
+                  href={client.link}
+                  key={`${client.name}-${index}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`${client.name} logo source`}
+                  aria-hidden={duplicate || undefined}
+                  tabIndex={duplicate ? -1 : undefined}
+                >
+                  <img className={client.className || ''} src={client.logo} alt={`${client.name} logo`} />
+                </a>
+              );
+            })}
+          </div>
         </div>
       </section>
 
@@ -392,13 +403,25 @@ function App() {
           <p className="eyebrow">Start</p>
           <h2>Bring us an idea, a workflow, or a system that needs to grow without compromising security or privacy.</h2>
         </div>
-        <a className="button primary" href="mailto:m.bahrov@icloud.com">
-          hello@spyglee.com
+        <a className="button primary" href="mailto:hello@spyglee.work">
+          hello@spyglee.work
           <ArrowRight size={18} />
         </a>
       </section>
-      <footer>
-          <a>SPYGLEE 2026</a>
+      <footer className="footer">
+        <div className="footer-inner">
+          <a className="brand" href="#top" aria-label="spyglee home">
+            <img className="brand-logo" src="/spyglee-logo.svg" alt="spyglee" />
+          </a>
+          <div className="footer-links" aria-label="Footer navigation">
+            <a href="#values">Values</a>
+            <a href="#projects">Projects</a>
+            <a href="#clients">Clients</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+          </div>
+          <p className="footer-copyright">&copy; {new Date().getFullYear()} spyglee. All rights reserved.</p>
+        </div>
       </footer>
     </main>
   );
