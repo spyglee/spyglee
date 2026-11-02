@@ -1,0 +1,25 @@
+<svg width="390" height="844" viewBox="0 0 390 844" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="prices-title">
+  <title id="prices-title">Ledger price comparison screen</title>
+  <rect width="390" height="844" fill="#F2F2F7"/>
+  <text x="28" y="36" fill="#1D1D1F" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="700">9:41</text>
+  <text x="195" y="92" fill="#1D1D1F" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="700">Price comparison</text>
+  <rect x="16" y="120" width="358" height="132" rx="14" fill="#FFFFFF"/>
+  <text x="32" y="152" fill="#1D1D1F" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="700">Personal inflation</text>
+  <text x="32" y="196" fill="#FF9500" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif" font-size="36" font-weight="700">+4.2%</text>
+  <text x="32" y="226" fill="#6E6E73" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif" font-size="13">Average price change of 3 items you buy often.</text>
+  <text x="20" y="284" fill="#6E6E73" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="600">TRACKED ITEMS</text>
+  <rect x="16" y="298" width="358" height="228" rx="14" fill="#FFFFFF"/>
+  <text x="32" y="336" fill="#1D1D1F" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif" font-size="16">Milk</text>
+  <text x="32" y="356" fill="#6E6E73" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif" font-size="13">14 purchases since Jan 2026</text>
+  <text x="358" y="336" fill="#FF3B30" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="700">+6.1%</text>
+  <text x="358" y="356" fill="#6E6E73" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif" font-size="13">&#8364;1.19 &#8594; &#8364;1.26</text>
+  <text x="32" y="408" fill="#1D1D1F" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif" font-size="16">Bread</text>
+  <text x="32" y="428" fill="#6E6E73" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif" font-size="13">12 purchases since Jan 2026</text>
+  <text x="358" y="408" fill="#FF3B30" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="700">+2.4%</text>
+  <text x="358" y="428" fill="#6E6E73" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif" font-size="13">&#8364;1.25 &#8594; &#8364;1.28</text>
+  <text x="32" y="480" fill="#1D1D1F" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif" font-size="16">Coffee</text>
+  <text x="32" y="500" fill="#6E6E73" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif" font-size="13">11 purchases since Feb 2026</text>
+  <text x="358" y="480" fill="#34C759" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="700">&#8722;1.8%</text>
+  <text x="358" y="500" fill="#6E6E73" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif" font-size="13">&#8364;8.40 &#8594; &#8364;8.25</text>
+  <rect x="128" y="812" width="134" height="5" rx="2.5" fill="#1D1D1F" opacity="0.25"/>
+</svg>

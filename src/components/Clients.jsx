@@ -1,3 +1,4 @@
+import { useT } from '../i18n.jsx';
 import './Clients.css';
 
 const clients = [
@@ -41,13 +42,15 @@ const clients = [
 ];
 
 export function Clients() {
+  const t = useT();
+
   return (
     <section className="clients section" id="clients">
       <div className="section-heading reveal">
-        <p className="eyebrow">Clients</p>
-        <h2>Trusted by teams across commerce, logistics, gaming, and hospitality.</h2>
+        <p className="eyebrow">{t('clients.eyebrow')}</p>
+        <h2>{t('clients.title')}</h2>
       </div>
-      <div className="client-marquee" aria-label="Client logos">
+      <div className="client-marquee" aria-label={t('clients.logos')}>
         <div className="client-track">
           {[...clients, ...clients].map((client, index) => {
             const duplicate = index >= clients.length;
@@ -58,11 +61,11 @@ export function Clients() {
                 key={`${client.name}-${index}`}
                 target="_blank"
                 rel="noreferrer"
-                aria-label={`${client.name} logo source`}
+                aria-label={t('clients.source', { name: client.name })}
                 aria-hidden={duplicate || undefined}
                 tabIndex={duplicate ? -1 : undefined}
               >
-                <img className={client.className || ''} src={client.logo} alt={`${client.name} logo`} />
+                <img className={client.className || ''} src={client.logo} alt={t('clients.logo', { name: client.name })} />
               </a>
             );
           })}

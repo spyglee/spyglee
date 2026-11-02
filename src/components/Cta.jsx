@@ -1,12 +1,15 @@
 import { ArrowRight } from 'lucide-react';
+import { useT } from '../i18n.jsx';
 import './Cta.css';
 
 export function Cta() {
+  const t = useT();
+
   return (
     <section className="cta" id="contact">
       <div className="reveal">
-        <p className="eyebrow">Start</p>
-        <h2>Bring us an idea, a workflow, or a system that needs to grow without compromising security or privacy.</h2>
+        <p className="eyebrow">{t('cta.eyebrow')}</p>
+        <h2>{t('cta.title')}</h2>
       </div>
       <div className="cta-actions">
         <a className="button primary" href="mailto:hello@spyglee.work">

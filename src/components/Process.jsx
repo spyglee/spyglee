@@ -1,42 +1,25 @@
 import { ArrowRight } from 'lucide-react';
+import { useT } from '../i18n.jsx';
 import './Process.css';
 
 const process = [
-  {
-    step: '01',
-    title: 'Understand your business',
-    text: 'We learn how your team actually works, where time is lost, and what success looks like before proposing anything.',
-  },
-  {
-    step: '02',
-    title: 'Design the solution',
-    text: 'We recommend the most effective approach — technology chosen to fit the problem, not the other way around.',
-  },
-  {
-    step: '03',
-    title: 'Build',
-    text: 'We develop in focused, production-ready releases with security and scalability visible from the start.',
-  },
-  {
-    step: '04',
-    title: 'Deploy',
-    text: 'We roll out with minimal disruption to your daily operations.',
-  },
-  {
-    step: '05',
-    title: 'Support',
-    text: 'We stay on as a long-term partner — monitoring, improving, and extending the system as your business grows.',
-  },
+  { step: '01', id: '1' },
+  { step: '02', id: '2' },
+  { step: '03', id: '3' },
+  { step: '04', id: '4' },
+  { step: '05', id: '5' },
 ];
 
 export function Process() {
+  const t = useT();
+
   return (
     <section className="section process-section" id="process">
       <div className="section-heading reveal">
-        <p className="eyebrow">Approach</p>
-        <h2>Thoughtful process. Fewer surprises. Better software.</h2>
+        <p className="eyebrow">{t('process.eyebrow')}</p>
+        <h2>{t('process.title')}</h2>
       </div>
-      <div className="process-timeline" aria-label="How we work">
+      <div className="process-timeline" aria-label={t('process.label')}>
         {process.map((item, index) => (
           <ProcessStep key={item.step} item={item} isLast={index === process.length - 1} />
         ))}
@@ -46,12 +29,14 @@ export function Process() {
 }
 
 function ProcessStep({ item, isLast }) {
+  const t = useT();
+
   return (
     <>
       <div className="process-step">
         <span className="process-index">{item.step}</span>
-        <h3>{item.title}</h3>
-        <p>{item.text}</p>
+        <h3>{t(`process.${item.id}.title`)}</h3>
+        <p>{t(`process.${item.id}.text`)}</p>
       </div>
       {!isLast && (
         <div className="process-connector" aria-hidden="true">

@@ -1,37 +1,28 @@
 import { Expand, LockKeyhole, ShieldCheck } from 'lucide-react';
+import { useT } from '../i18n.jsx';
 import './Values.css';
 
 const values = [
-  {
-    icon: ShieldCheck,
-    title: 'Security by design',
-    text: 'Threat-aware architecture, hardened integrations, and release practices that reduce operational risk from day one.',
-  },
-  {
-    icon: Expand,
-    title: 'Built to scale',
-    text: 'Cloud-ready systems, maintainable code, and pragmatic architecture that can grow with teams, traffic, and data.',
-  },
-  {
-    icon: LockKeyhole,
-    title: 'Privacy first',
-    text: 'Careful data handling, permission-aware workflows, and product decisions shaped around user trust.',
-  },
+  { id: 'security', icon: ShieldCheck },
+  { id: 'scale', icon: Expand },
+  { id: 'privacy', icon: LockKeyhole },
 ];
 
 export function Values() {
+  const t = useT();
+
   return (
     <section className="values section" id="values">
-      <div className="value-grid" aria-label="spyglee values">
+      <div className="value-grid" aria-label={t('values.label')}>
         {values.map((value) => {
           const Icon = value.icon;
           return (
-            <article className="value-card" key={value.title}>
+            <article className="value-card" key={value.id}>
               <div className="card-heading">
                 <Icon size={22} />
-                <h3>{value.title}</h3>
+                <h3>{t(`values.${value.id}.title`)}</h3>
               </div>
-              <p>{value.text}</p>
+              <p>{t(`values.${value.id}.text`)}</p>
             </article>
           );
         })}

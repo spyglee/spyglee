@@ -1,6 +1,9 @@
+import { useT } from '../i18n.jsx';
 import './About.css';
 
 export function About() {
+  const t = useT();
+
   return (
     <section className="section about" id="about">
       <div className="about-grid">
@@ -8,11 +11,9 @@ export function About() {
           <img src="/spyglee-logo.svg" alt="" />
         </div>
         <div className="about-content reveal">
-          <p className="eyebrow">About spyglee</p>
-          <h2>Full-stack software development.</h2>
-          <p className="about-text">
-            We design and build across web, mobile, desktop, and cloud, with practical Microsoft 365 and automation expertise built in — secure, scalable software shaped around how your business actually runs.
-          </p>
+          <p className="eyebrow">{t('about.eyebrow')}</p>
+          <h2>{t('about.title')}</h2>
+          <p className="about-text">{t('about.text')}</p>
         </div>
       </div>
     </section>

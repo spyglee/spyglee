@@ -1,111 +1,69 @@
+import { useT } from '../i18n.jsx';
 import './Technology.css';
 
 const technologyStack = [
   {
-    category: 'Web',
-    description: 'Secure, scalable web products and APIs with modern frontend and backend foundations.',
+    id: 'web',
     technologies: [
-      {
-        name: 'React',
-        image: '/tech/react.svg',
-        description: 'Component-driven interfaces for fast, polished, maintainable web applications.',
-      },
-      {
-        name: 'Node.js',
-        image: '/tech/nodejs.png',
-        description: 'Efficient server-side JavaScript for APIs, integrations, automation, and real-time services.',
-      },
-      {
-        name: 'TypeScript',
-        image: '/tech/typescript.png',
-        description: 'Typed JavaScript that improves reliability, refactoring confidence, and long-term maintainability.',
-      },
+      { name: 'React', image: '/tech/react.svg', description: 'tech.react' },
+      { name: 'Node.js', image: '/tech/nodejs.png', description: 'tech.node' },
+      { name: 'TypeScript', image: '/tech/typescript.png', description: 'tech.ts' },
     ],
   },
   {
-    category: 'Mobile',
-    description: 'Native and cross-platform mobile experiences designed for performance and everyday usability.',
+    id: 'mobile',
     technologies: [
-      {
-        name: 'iOS development',
-        image: '/tech/ios.svg',
-        description: 'Native Apple mobile applications with smooth interactions and platform-specific quality.',
-      },
-      {
-        name: 'React Native',
-        image: '/tech/react.svg',
-        description: 'Cross-platform mobile apps that share product logic while preserving a native feel.',
-      },
+      { nameKey: 'tech.ios.name', image: '/tech/ios.svg', description: 'tech.ios' },
+      { name: 'React Native', image: '/tech/react.svg', description: 'tech.rn' },
     ],
   },
   {
-    category: 'Desktop',
-    description: 'Desktop software for focused workflows, internal operations, and cross-platform productivity tools.',
+    id: 'desktop',
     technologies: [
-      {
-        name: 'Swift',
-        image: '/tech/swift.png',
-        description: 'Native macOS applications with Apple-quality performance, privacy, and interface behavior.',
-      },
-      {
-        name: 'Electron',
-        image: '/tech/electron.svg',
-        description: 'Cross-platform desktop apps built with web technologies and packaged for team workflows.',
-      },
+      { name: 'Swift', image: '/tech/swift.png', description: 'tech.swift' },
+      { name: 'Electron', image: '/tech/electron.svg', description: 'tech.electron' },
     ],
   },
   {
-    category: 'Microsoft',
-    description: 'Practical Microsoft 365 and Power Platform solutions that improve day-to-day office work.',
+    id: 'microsoft',
     technologies: [
-      {
-        name: 'Power Apps',
-        image: '/tech/powerapps.png',
-        description: 'Power Apps, Power Automate, and Power BI solutions for forms, approvals, dashboards, and automation.',
-      },
-      {
-        name: 'Power Automate',
-        image: '/tech/powerautomate.svg',
-        description: 'Excel automation for repeatable reporting, cleanup, and business process shortcuts.',
-      },
-      {
-        name: 'Copilot Studio',
-        image: '/tech/copilotstudio.webp',
-        description: 'Enables users to build, customize, and deploy AI-powered copilots and chatbots across Microsoft services.',
-      },
-      {
-        name: 'SharePoint Online',
-        image: '/tech/sharepointonline.png',
-        description: 'Cloud-based platform for team collaboration, document management, and intranet site creation.',
-      },
+      { name: 'Power Apps', image: '/tech/powerapps.png', description: 'tech.powerapps' },
+      { name: 'Power Automate', image: '/tech/powerautomate.svg', description: 'tech.automate' },
+      { name: 'Copilot Studio', image: '/tech/copilotstudio.webp', description: 'tech.copilot' },
+      { name: 'SharePoint Online', image: '/tech/sharepointonline.png', description: 'tech.sharepoint' },
     ],
   },
 ];
 
 export function Technology() {
+  const t = useT();
+
   return (
     <section className="technology section" id="technology">
       <div className="section-heading reveal">
-        <p className="eyebrow">Technology</p>
-        <h2>The right technology for the job — chosen to fit your business, not the other way around.</h2>
+        <p className="eyebrow">{t('tech.eyebrow')}</p>
+        <h2>{t('tech.title')}</h2>
       </div>
       <div className="stack-groups">
         {technologyStack.map((group) => (
-          <article className="stack-group" key={group.category}>
+          <article className="stack-group" key={group.id}>
             <div className="stack-group-heading">
-              <h3>{group.category}</h3>
-              <p>{group.description}</p>
+              <h3>{t(`tech.${group.id}`)}</h3>
+              <p>{t(`tech.${group.id}.text`)}</p>
             </div>
             <div className="tech-grid">
-              {group.technologies.map((tech) => (
-                <div className="tech-card" key={tech.name}>
-                  <div className="card-heading">
-                    <img src={tech.image} alt={tech.name + ' technology image'} />
-                    <h4>{tech.name}</h4>
+              {group.technologies.map((tech) => {
+                const name = tech.nameKey ? t(tech.nameKey) : tech.name;
+                return (
+                  <div className="tech-card" key={tech.name ?? tech.nameKey}>
+                    <div className="card-heading">
+                      <img src={tech.image} alt={t('tech.image', { name })} />
+                      <h4>{name}</h4>
+                    </div>
+                    <p>{t(tech.description)}</p>
                   </div>
-                  <p>{tech.description}</p>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </article>
         ))}

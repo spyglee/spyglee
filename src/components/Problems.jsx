@@ -1,51 +1,29 @@
 import { ArrowRight } from 'lucide-react';
+import { useT } from '../i18n.jsx';
 import './Problems.css';
 
-const businessProblems = [
-  {
-    problem: "Manual, repetitive work eats up your team's time.",
-    solution: 'Automated workflows and AI agents handle the repetitive parts.',
-  },
-  {
-    problem: 'Employees waste time searching for documents and answers.',
-    solution: 'Centralized systems and AI-powered search surface what people need.',
-  },
-  {
-    problem: "Core systems don't talk to each other.",
-    solution: 'Integrations and APIs connect the tools you already use.',
-  },
-  {
-    problem: 'Approvals and internal processes move too slowly.',
-    solution: 'Streamlined, automated approval workflows.',
-  },
-  {
-    problem: "Internal tools are outdated or don't fit how you work.",
-    solution: 'Custom software built around your actual workflow.',
-  },
-  {
-    problem: 'Reporting still happens by hand, in spreadsheets.',
-    solution: 'Automated dashboards and reporting your team can trust.',
-  },
-];
+const businessProblems = ['1', '2', '3', '4', '5', '6'];
 
 export function Problems() {
+  const t = useT();
+
   return (
     <section className="section problems" id="problems">
       <div className="section-heading reveal">
-        <p className="eyebrow">Business problems</p>
-        <h2>We solve real, everyday problems — not just build software.</h2>
+        <p className="eyebrow">{t('problems.eyebrow')}</p>
+        <h2>{t('problems.title')}</h2>
       </div>
-      <div className="problem-grid" aria-label="Problems we solve and how">
-        {businessProblems.map((row) => (
-          <div className="problem-row" key={row.problem}>
+      <div className="problem-grid" aria-label={t('problems.label')}>
+        {businessProblems.map((id) => (
+          <div className="problem-row" key={id}>
             <div className="problem-cell problem">
-              <span className="problem-tag">Before</span>
-              <p>{row.problem}</p>
+              <span className="problem-tag">{t('problems.before')}</span>
+              <p>{t(`problems.${id}.problem`)}</p>
             </div>
             <ArrowRight className="problem-arrow" size={20} aria-hidden="true" />
             <div className="problem-cell solution">
-              <span className="problem-tag">After</span>
-              <p>{row.solution}</p>
+              <span className="problem-tag">{t('problems.after')}</span>
+              <p>{t(`problems.${id}.solution`)}</p>
             </div>
           </div>
         ))}
